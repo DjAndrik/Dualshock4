@@ -9,6 +9,7 @@ int main(){
 
     TypeGamepadStruct *GamepadStruct = new TypeGamepadStruct;
 
+	//path to your gamepad file
     DS4 Gamepad("/dev/input/js1");
 
     while((Gamepad).GetGamepadStatus()){
