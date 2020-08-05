@@ -9,9 +9,7 @@
 #include <iostream>
 #include <mutex>
 #include <thread>
-#include <atomic>
 #include <chrono>
-
 
 #define MagicNumber 0x7FFF
 
