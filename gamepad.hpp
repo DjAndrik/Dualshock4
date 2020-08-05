@@ -5,6 +5,7 @@
 #include <fcntl.h>
 
 #include <cstring>
+#include <string>
 #include <cstdio>
 #include <mutex>
 #include <thread>
