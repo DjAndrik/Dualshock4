@@ -6,10 +6,8 @@
 
 #include <cstring>
 #include <cstdio>
-#include <iostream>
 #include <mutex>
 #include <thread>
-#include <chrono>
 
 #define MagicNumber 0x7FFF
 
