@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include "gamepad.hpp"
 
 using namespace std;
