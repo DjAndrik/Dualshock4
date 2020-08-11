@@ -14,12 +14,6 @@
 
 using namespace std;
 
-struct TypeEventStruct{
-    int16_t Value = 0;
-    char ObjectType = 0;
-    char ObjectNumber = 0;
-};
-
 struct TypeGamepadStruct{
 
     bool Triangle = false;
