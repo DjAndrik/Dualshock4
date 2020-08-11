@@ -1,2 +1,2 @@
 #!/bin/bash
-./realise/Gamepad.o
+./realise/Gamepad
