@@ -1,5 +1,12 @@
 #include "gamepad.hpp"
 
+struct TypeEventStruct{
+    uint32_t Time = 0;
+    int16_t Value = 0;
+    char ObjectType = 0;
+    char ObjectNumber = 0;
+};
+
 void DS4::GetGamepadStruct(TypeGamepadStruct* GamepadStruct){
     this->GamepadStructMutex.lock();
     *GamepadStruct = *(this->GamepadStruct);
@@ -39,8 +46,6 @@ DS4::~DS4(){
 }
 
 void DS4::ReadGamepad(){
-
-    char RawData[8] = {};
     TypeEventStruct EventStruct;
     TypeGamepadStruct *GamepadStruct = new TypeGamepadStruct;
 
@@ -50,8 +55,8 @@ void DS4::ReadGamepad(){
 
 	this->GetGamepadStruct(GamepadStruct);
 
-	GamepadStatus = read(this->GamepadDescriptor,RawData,8);
-	memcpy(&EventStruct,&RawData[4],4);
+	GamepadStatus = read(this->GamepadDescriptor,&EventStruct,8);
+	    
 	if (GamepadStatus==-1){this->SetGamepadStatus(false);break;}
 
 	if (EventStruct.ObjectType==2){
